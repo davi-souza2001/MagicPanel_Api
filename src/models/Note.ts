@@ -1,8 +1,8 @@
 import mongoose from '../db/conn'
 const {Schema} = mongoose
 
-const Notes = mongoose.model(
-    'Notes',
+const Note = mongoose.model(
+    'Note',
     new Schema({
         note: {
             type: String,
@@ -15,4 +15,4 @@ const Notes = mongoose.model(
     }, { timestamps: true })
 )
 
-export default Notes
+export default Note
