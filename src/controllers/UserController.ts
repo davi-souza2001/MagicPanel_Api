@@ -1,4 +1,6 @@
 import { Request, Response } from 'express'
+import bcrypt from 'bcrypt'
+
 import User from '../models/User'
 
 export default class UserController {
@@ -40,12 +42,14 @@ export default class UserController {
         }
 
         // create password
+        const salt = await bcrypt.genSalt(10)
+        const passwordHash = await bcrypt.hash(password, salt)
 
         //create user
         const user = new User({
             name,
             email,
-            password
+            password: passwordHash
         })
 
         try {
