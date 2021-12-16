@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
 
 import User from '../models/User'
+import createUserToken from '../helpers/createUserToken'
 
 export default class UserController {
     static async register (req: Request, res: Response) {
@@ -87,6 +88,6 @@ export default class UserController {
             return
         }
 
-        res.status(200).json({ message: 'Parabéns !'})
+        await createUserToken(user, req, res)
     }
 }
