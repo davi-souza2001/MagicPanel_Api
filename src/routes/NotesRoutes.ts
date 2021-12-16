@@ -3,6 +3,6 @@ import NotesController from '../controllers/NotesController'
 
 const router = Router()
 
-router.get('/getAll', NotesController.getAll)
+router.post('/postNewNote', NotesController.postNewNote)
 
 export default router
