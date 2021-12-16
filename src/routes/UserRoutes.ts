@@ -1,8 +1,8 @@
 import { Router } from 'express'
-const UserController = require('../controllers/UserController')
+import UserController from '../controllers/UserController'
 
 const router = Router()
 
-router.get('/register', UserController.register)
+router.post('/register', UserController.register)
 
 export default router
