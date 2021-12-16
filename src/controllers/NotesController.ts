@@ -12,9 +12,9 @@ export default class NotesController {
 
         if (req.headers.authorization){
             // ele pega o token do header (que vai ta la depois o usuário logar), executa o getToken para tirar
-            // o bearer do começo. Logo depois ele pega o token jwt e verifica e devolve tudo que contem no
-            // jwt (que é o nome e id). Por final ele acha o usuário tentando logar com o id, que é o mesmo
-            // do mongo
+            // o bearer do começo. Logo depois ele pega o token jwt e verifica e devolve tudo que contem
+            // no jwt (que é o nome e id). Por final ele acha o usuário tentando logar com o id,
+            // que é o mesmo do mongo.
             const token = getToken(req)
             const decoded: any = jwt.verify(token, 'magicpanel')
             const userLogged = await User.findById(decoded.id)
@@ -36,5 +36,10 @@ export default class NotesController {
             return
         }
 
+    }
+
+    static async getAllNotes(req: Request, res: Response){
+        const allNotes = await Note.find()
+        return res.status(200).json(allNotes)
     }
 }
