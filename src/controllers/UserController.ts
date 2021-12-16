@@ -1,8 +1,10 @@
 import { Request, Response } from 'express'
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 import User from '../models/User'
 import createUserToken from '../helpers/createUserToken'
+import getToken from '../helpers/getToken'
 
 export default class UserController {
     static async register (req: Request, res: Response) {
@@ -89,5 +91,23 @@ export default class UserController {
         }
 
         await createUserToken(user, req, res)
+    }
+
+    static async checkUser(req: Request, res: Response){
+
+        let currentUser
+
+        if (req.headers.authorization) {
+            const token = getToken(req)
+            const decoded: any = jwt.verify(token, 'magicpanel')
+
+            currentUser = await User.findById(decoded.id)
+
+            currentUser.password = undefined
+        } else {
+            currentUser = null
+        }
+
+        res.status(200).json(currentUser)
     }
 }
