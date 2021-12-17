@@ -62,7 +62,6 @@ export default class NotesController {
         const note = req.body.note
         const title = req.body.title
         let favorite = req.body.favorite
-        let email: String
 
         //check if user exists
 
@@ -111,6 +110,32 @@ export default class NotesController {
             res.status(200).json({message: 'Nota atualizada com sucesso !', noteSearched} )
         } catch (err) {
             res.status(500).json({ message: 'Houve um erro !', err })
+            return
+        }
+    }
+
+    static async deleteNote(req: Request, res: Response) {
+        const id = req.params.id
+
+        //check if user exists
+
+        if (!req.headers.authorization) {
+            res.status(422).json({ message: 'Você não está logado !' })
+            return
+        }
+        //check if note exists
+
+        const note = await Note.findOne({_id: id})
+
+        if(!note){
+            res.status(404).json({ message: 'Nota não encontrada !'})
+        }
+
+        try {
+            await Note.findByIdAndDelete(id)
+            res.status(200).json({ message: 'Nota apagada !'})
+        } catch (err) {
+            res.status(400).json({ message: 'Algo deu errado !', err})
             return
         }
     }
