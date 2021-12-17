@@ -9,6 +9,8 @@ export default class NotesController {
     static async postNewNote(req: Request, res: Response){
         const note = req.body.note
         const title = req.body.title
+        let favorite = req.body.favorite
+
         let email: String 
 
         if (req.headers.authorization){
@@ -30,10 +32,14 @@ export default class NotesController {
                 res.status(422).json({ message: 'Digite uma título !'})
                 return
             }
+            if(!favorite){
+                favorite = false
+            }
 
             const noteGeral = new Note({
                 note,
                 title,
+                favorite,
                 email
             })
 

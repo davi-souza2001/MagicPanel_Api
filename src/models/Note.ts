@@ -12,6 +12,10 @@ const Note = mongoose.model(
             type: String,
             required: true
         },
+        favorite:{
+            type: Boolean,
+            required: true
+        },
         email: {
             type: String,
             required: true
