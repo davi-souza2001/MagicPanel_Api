@@ -8,6 +8,7 @@ import getToken from '../helpers/getToken'
 export default class NotesController {
     static async postNewNote(req: Request, res: Response){
         const note = req.body.note
+        const title = req.body.title
         let email: String 
 
         if (req.headers.authorization){
@@ -20,8 +21,19 @@ export default class NotesController {
             const userLogged = await User.findById(decoded.id)
             email = userLogged.email
 
+            if(!note){
+                res.status(422).json({ message: 'Digite uma nota !'})
+                return
+            }
+
+            if(!title){
+                res.status(422).json({ message: 'Digite uma título !'})
+                return
+            }
+
             const noteGeral = new Note({
                 note,
+                title,
                 email
             })
 
