@@ -117,12 +117,12 @@ export default class NotesController {
     static async deleteNote(req: Request, res: Response) {
         const id = req.params.id
 
-        //check if user exists
+        // //check if user exists
 
-        if (!req.headers.authorization) {
-            res.status(422).json({ message: 'Você não está logado !' })
-            return
-        }
+        // if (!req.headers.authorization) {
+        //     res.status(422).json({ message: 'Você não está logado !' })
+        //     return
+        // }
         //check if note exists
 
         const note = await Note.findOne({_id: id})

@@ -4,14 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+    "dev": "nodemon src/server.ts --ignore __tests__",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "test": "jest"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jest": "^27.4.5",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2",
     "nodemon": "^2.0.15"

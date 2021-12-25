@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 const dot = dotenv.config()
 
 async function main(){
-    await mongoose.connect(process.env.REACT_APP_MONGO_CONNECT)
+    await mongoose.connect(process.env.MONGO_CONNECT)
     console.log('Conectouu ao Mongoose')
 }
 
