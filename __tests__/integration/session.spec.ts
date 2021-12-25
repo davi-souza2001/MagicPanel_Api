@@ -1,11 +1,16 @@
+import request from 'supertest'
+
+import { app } from '../../src/app'
+
+
 describe('basics tests', () => {
-    it('test 1 + 1', () => {
-        const x = 2;
-        const y = 2;
+    it('Get all notes', async() => {
+        const response = await request(app)
+        .get('/notes/getAllNotes')
 
-        const sum = x + y;
+        console.log(response)
 
-        expect(sum).toBe(4);
+        expect(response.status).toBe(200)
     });
 
 });

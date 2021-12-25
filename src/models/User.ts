@@ -1,5 +1,7 @@
 import mongoose from '../db/conn'
-const {Schema} = mongoose
+// const {Schema} = mongoose
+
+const Schema = mongoose.Schema
 
 const User = mongoose.model(
     'User',
