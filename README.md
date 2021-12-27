@@ -249,3 +249,53 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts --ignore __tests__",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.2",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^2.1.1",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.3",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/supertest": "^2.0.11",
+    "jest": "^27.4.5",
+    "sucrase": "^3.20.3",
+    "supertest": "^6.1.6",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+} -->
