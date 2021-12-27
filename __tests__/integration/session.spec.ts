@@ -1,16 +1,14 @@
-import request from 'supertest'
-
-import { app } from '../../src/app'
-
+// import request from 'supertest'
+// // const response = await request(app)
+// // .get('/notes/getAllNotes')
 
 describe('basics tests', () => {
-    it('Get all notes', async() => {
-        const response = await request(app)
-        .get('/notes/getAllNotes')
-
-        console.log(response)
-
-        expect(response.status).toBe(200)
+    
+    it('Create user', async() => {
+        
+        
+    
+        expect(2 + 2).toBe(4)
     });
 
 });
