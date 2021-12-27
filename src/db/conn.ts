@@ -1,4 +1,6 @@
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
+const mongoose = require('mongoose')
+
 
 
 async function main(){
@@ -8,4 +10,5 @@ async function main(){
 
 main().catch((err) => console.log(err))
 
-export default mongoose
+// export default mongoose
+module.exports = mongoose

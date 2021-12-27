@@ -1,4 +1,5 @@
-import mongoose from '../db/conn'
+// import mongoose from '../db/conn'
+const mongoose = require('../db/conn')
 
 const Schema = mongoose.Schema
 
@@ -23,4 +24,4 @@ const User = mongoose.model(
     }, { timestamps: true })
 )
 
-export default User
+module.exports = User
