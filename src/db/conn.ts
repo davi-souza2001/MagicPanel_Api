@@ -1,7 +1,4 @@
-// import mongoose from 'mongoose'
-const mongoose = require('mongoose')
-
-
+import mongoose from 'mongoose'
 
 async function main(){
     await mongoose.connect(process.env.MONGO_CONNECT)
@@ -10,5 +7,4 @@ async function main(){
 
 main().catch((err) => console.log(err))
 
-// export default mongoose
-module.exports = mongoose
+export default mongoose
