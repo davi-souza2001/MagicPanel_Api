@@ -8,13 +8,13 @@ export default {
   // automock: false,
 
   // Stop running tests after `n` failures
-  bail: false,
+  // bail: 0,
 
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\david\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances and results before every test
-  clearMocks: true,
+  // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -23,7 +23,7 @@ export default {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -93,7 +93,7 @@ export default {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: '@shelf/jest-mongodb',
+  // preset: undefined,
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -171,7 +171,7 @@ export default {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {},
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
