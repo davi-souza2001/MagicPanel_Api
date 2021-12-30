@@ -1,4 +1,26 @@
-Api for the MagicPanel project
+# 🎈MagicPanel 
+## 👾 An application that uses jwt authentication and mongo to save your daily notes.
+
+<img alt="Next" src="https://img.shields.io/badge/-Next-black?style=flat-square&logo=react" width="73px"/> <img alt="Node" src="https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js" width="90px"/>
+
+<a href="https://github.com/davi-souza2001/MagicPanel_Front">Link for the front</a>
+
+![2021-12-29-11-29-46](https://user-images.githubusercontent.com/77704994/147777807-165b17c4-1b6d-4994-93dc-ed23d295befe.gif)
+
+
+##  How to use ? 🤔
+
+Only make login in app and write your notes, with your dates ! 😁
+
+## How to make my changes ? 🤔
+
+```sh
+npm install
+```
+
+```sh
+npm run build
+```
 
 <!-- https://magicpaneapi.herokuapp.com/ -->
 
